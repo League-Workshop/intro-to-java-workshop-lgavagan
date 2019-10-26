@@ -2,7 +2,27 @@ package section4;
 
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 public class AwesomeOrNot {
+	public static void main(String[] args) {
+		int number =new Random().nextInt(4);
+	System.out.println(number);
+String awesome=JOptionPane.showInputDialog(null,"What do you think is awesome?");
+if(number==0) {
+JOptionPane.showMessageDialog(null,awesome+" is awesome");
+}
+if(number==1) {
+	JOptionPane.showMessageDialog(null,awesome+" is ok");
+}
+	if(number==2) {
+	JOptionPane.showMessageDialog(null,awesome+"is boring");
+	}
+	if(number==3) {
+		JOptionPane.showMessageDialog(null,awesome+" is terrible");
+		
+	}
+}
 
 	// 1. Make a main method that includes all the steps below…
 
