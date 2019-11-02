@@ -11,6 +11,24 @@ public class DragonFight {
 		ImageIcon dragon = new ImageIcon("src/section4/dragonPicture.jpg");		
 		
 		JOptionPane.showMessageDialog(null, "Defeat the dragon to take its treasure!", "Dragon Fighter", 0, dragon);
+		int playerHealth = 100;
+		int dragonHealth = 100;
+		int damageCausedByPlayer = 0;
+		int damageCausedByDragon = 0;
+		while(playerHealth>0 && dragonHealth>0) {
+		String answer=	JOptionPane.showInputDialog("Do you want to attack the dragon with a yell or kick?");
+		if(answer.equals("yell")) {
+			damageCausedByDragon =new Random().nextInt(11);
+
+			dragonHealth = dragonHealth - damageCausedByDragon;
+		}
+		if(answer.equals("kick")) {
+			damageCausedByPlayer =new Random().nextInt(36);
+			playerHealth = playerHealth - damageCausedByPlayer;
+			
+			
+		}
+		
 		// 2. Create a variable called "playerHealth" to store your health (set it equal to 100)
 	
 		// 3. Create a variable called "dragonHealth" to store the dragon's health (set it equal to 100)
@@ -62,4 +80,4 @@ public class DragonFight {
 			
 		}
 	}
-
+}
