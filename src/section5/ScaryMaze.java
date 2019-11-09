@@ -24,14 +24,14 @@ public class ScaryMaze extends JPanel implements Runnable, MouseMotionListener {
 
 	ScaryMaze() throws Exception {
 		//1. Use this online tool to make a maze image and drop it into your section5 package: https://www.pixilart.com/
-		//maze = ImageIO.read(getClass().getResource("standardMaze.jpg"));
+		maze = ImageIO.read(getClass().getResource("standardPuzzle.jpg")); 
 		//2. Change the line of code above so that it matches your maze's file name
 		
 		//3. Set the mouse pointer to the start of your maze using:
-		//new Robot().mouseMove(45, 95);
+		new Robot().mouseMove(45, 95);
 		
 		//4. Add a mouse motion listener using:
-		//addMouseMotionListener(this);
+		addMouseMotionListener(this);
 		
 	}
 
@@ -40,11 +40,13 @@ public class ScaryMaze extends JPanel implements Runnable, MouseMotionListener {
 		int mouseX = e.getX();
 		int mouseY = e.getY();
 		int mouseColor = maze.getRGB(mouseX, mouseY);
+		System.out.println(mouseColor);
 		//5. Print the mouseColor variable 
 		
 		//6.  Run your program and put your mouse over the background to find out what color it is
 		
 		//7. Create an int variable that holds the background color. 
+		int pathColor =-1;
 		
 		//8. If the mouse falls off the path (if it is on the background)
 	
@@ -53,6 +55,12 @@ public class ScaryMaze extends JPanel implements Runnable, MouseMotionListener {
 		//13. If the mouse is on the end color
 		
 				// pop up a message to tell them they won
+		if(mouseColor != pathColor) {
+			
+			scare();
+		}
+		
+		
 		
 	}
 
